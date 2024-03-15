@@ -172,8 +172,21 @@ app.post('/api/book-flight', async (req, res) => {
 
 
 
+// Define a route to fetch all available flights
+app.get('/api/get-all-flights', async (req, res) => {
+  try {
+    // Query the database to retrieve all flights
+    const allFlights = await FlightModel.find();
 
- 
+    // Send the retrieved flights as a response
+    res.status(200).json({ availableFlights: allFlights });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);
 });
