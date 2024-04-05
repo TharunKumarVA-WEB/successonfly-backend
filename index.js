@@ -923,208 +923,6 @@
 
 
 
-// const express = require('express');
-// const app = express();
-// const bodyParser = require('body-parser');
-// const mongoose = require('mongoose');
-// const cors = require('cors');
-
-// const port = 3000;
-// app.use(bodyParser.json());
-
-// // Middleware
-// app.use(cors());
-// app.use(express.json());
-
-// mongoose.connect('mongodb+srv://tharunkumarva:Atlas123123@cluster0.6rwnhir.mongodb.net/successonfly', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
-// mongoose.connection.on('connected', () => {
-//   console.log('Connected to MongoDB');
-// });
-
-// // Schema and Model setup
-// const userSchema = new mongoose.Schema({
-//   username: { type: String, unique: true, required: true },
-//   password: { type: String, required: true },
-// });
-
-// const UserModel = mongoose.model('User', userSchema);
-
-// // Define the BookedFlight model
-// const bookedFlightSchema = new mongoose.Schema({
-//   airline: String,
-//   departure: {
-//     location: String,
-//     date_time: String,
-//   },
-//   arrival: {
-//     location: String,
-//     date_time: String,
-//   },
-//   classSelection: String,
-//   userEmail: String,
-// });
-
-// const BookedFlight = mongoose.model('BookedFlight', bookedFlightSchema);
-
-// // Register route
-// app.post('/api/users', async (req, res) => {
-//   const { username, password } = req.body;
-
-//   try {
-//     // Check if the username already exists
-//     const existingUser = await UserModel.findOne({ username });
-
-//     if (existingUser) {
-//       return res.status(400).json({ error: 'Username already exists' });
-//     }
-
-//     // Create a new user
-//     const newUser = new UserModel({ username, password });
-
-//     // Save the new user to the database
-//     await newUser.save();
-
-//     res.status(201).json({ message: 'User registered successfully', user: newUser });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Internal server error' });
-//   }
-// });
-
-// // Login route
-// app.post('/api/login', async (req, res) => {
-//   const { username, password } = req.body;
-
-//   try {
-//     // Check if the user with the provided credentials exists in the database
-//     const user = await UserModel.findOne({ username, password });
-
-//     if (user) {
-//       res.status(200).json({ message: 'Login successful', user });
-//     } else {
-//       res.status(401).json({ error: 'Invalid credentials' });
-//     }
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Internal server error' });
-//   }
-// });
-
-// // Flight schema
-// const flightSchema = new mongoose.Schema({
-//   flight_number: String,
-//   airline: String,
-//   departure: {
-//     location: String,
-//     date_time: String,
-//   },
-//   arrival: {
-//     location: String,
-//     date_time: String,
-//   },
-//   class_availability: {
-//     Business: {
-//       remaining_seats: Number,
-//       price: Number,
-//     },
-//     Economy: {
-//       remaining_seats: Number,
-//       price: Number,
-//     },
-//   },
-// }, { collection: "flightsavilables" });
-
-// const FlightModel = mongoose.model('flightsavilables', flightSchema);
-
-// // Check flights route
-// app.post('/api/check-flights', async (req, res) => {
-//   const { startLocation, endLocation, startDate, endDate, adults, children, infants, selectedClass } = req.body;
-
-//   try {
-//     // Query the database for available flights based on user input
-//     const availableFlights = await FlightModel.find({
-//       'departure.location': startLocation,
-//       'arrival.location': endLocation,
-//     });
-
-//     console.log('Available Flights:', availableFlights);
-
-//     res.status(200).json({ availableFlights });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Internal server error' });
-//   }
-// });
-
-// // Book flight route
-// app.post('/api/book-flight', async (req, res) => {
-//   try {
-//     // Extract booking details from the request body
-//     const { flight, classSelection, userEmail } = req.body;
-
-//     // Create a new booked flight document
-//     const bookedFlight = new BookedFlight({
-//       airline: flight.airline,
-//       departure: flight.departure,
-//       arrival: flight.arrival,
-//       classSelection,
-//       userEmail,
-//     });
-
-//     // Save the booked flight document to the database
-//     await bookedFlight.save();
-
-//     // Send a response indicating that the booking was successful
-//     res.status(200).json({ message: 'Booking successful', bookedFlight });
-//   } catch (error) {
-//     console.error('Error booking flight:', error);
-//     res.status(500).json({ error: 'Internal server error' });
-//   }
-// });
-
-// // Fetch all flights route
-// app.get('/api/get-all-flights', async (req, res) => {
-//   try {
-//     // Query the database to retrieve all flights
-//     const allFlights = await FlightModel.find();
-
-//     // Send the retrieved flights as a response
-//     res.status(200).json({ availableFlights: allFlights });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Internal server error' });
-//   }
-// });
-
-
-// // Fetch user orders route
-// app.get('/api/get-user-orders', async (req, res) => {
-//     const { userEmail } = req.query;
-  
-//     try {
-//       const userOrders = await BookedFlight.find({ userEmail });
-//       res.status(200).json({ orders: userOrders });
-//     } catch (error) {
-//       console.error('Error fetching user orders:', error);
-//       res.status(500).json({ error: 'Internal server error' });
-//     }
-//   });
-  
-
-
-
-// app.listen(port, () => {
-//   console.log(`Server is listening at http://localhost:${port}`);
-// });
-
-
-
-
-
-
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -1132,12 +930,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const port = 3000;
-
 app.use(bodyParser.json());
+
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
 mongoose.connect('mongodb+srv://tharunkumarva:Atlas123123@cluster0.6rwnhir.mongodb.net/successonfly', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -1145,11 +943,8 @@ mongoose.connect('mongodb+srv://tharunkumarva:Atlas123123@cluster0.6rwnhir.mongo
 mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB');
 });
-mongoose.connection.on('error', (err) => {
-  console.error('MongoDB connection error:', err);
-});
 
-// Define user schema and model
+// Schema and Model setup
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true },
   password: { type: String, required: true },
@@ -1157,7 +952,7 @@ const userSchema = new mongoose.Schema({
 
 const UserModel = mongoose.model('User', userSchema);
 
-// Define booked flight schema and model
+// Define the BookedFlight model
 const bookedFlightSchema = new mongoose.Schema({
   airline: String,
   departure: {
@@ -1174,18 +969,22 @@ const bookedFlightSchema = new mongoose.Schema({
 
 const BookedFlight = mongoose.model('BookedFlight', bookedFlightSchema);
 
-// Register user route
+// Register route
 app.post('/api/users', async (req, res) => {
   const { username, password } = req.body;
 
   try {
+    // Check if the username already exists
     const existingUser = await UserModel.findOne({ username });
 
     if (existingUser) {
       return res.status(400).json({ error: 'Username already exists' });
     }
 
+    // Create a new user
     const newUser = new UserModel({ username, password });
+
+    // Save the new user to the database
     await newUser.save();
 
     res.status(201).json({ message: 'User registered successfully', user: newUser });
@@ -1200,6 +999,7 @@ app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
+    // Check if the user with the provided credentials exists in the database
     const user = await UserModel.findOne({ username, password });
 
     if (user) {
@@ -1213,15 +1013,44 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+// Flight schema
+const flightSchema = new mongoose.Schema({
+  flight_number: String,
+  airline: String,
+  departure: {
+    location: String,
+    date_time: String,
+  },
+  arrival: {
+    location: String,
+    date_time: String,
+  },
+  class_availability: {
+    Business: {
+      remaining_seats: Number,
+      price: Number,
+    },
+    Economy: {
+      remaining_seats: Number,
+      price: Number,
+    },
+  },
+}, { collection: "flightsavilables" });
+
+const FlightModel = mongoose.model('flightsavilables', flightSchema);
+
 // Check flights route
 app.post('/api/check-flights', async (req, res) => {
   const { startLocation, endLocation, startDate, endDate, adults, children, infants, selectedClass } = req.body;
 
   try {
+    // Query the database for available flights based on user input
     const availableFlights = await FlightModel.find({
       'departure.location': startLocation,
       'arrival.location': endLocation,
     });
+
+    console.log('Available Flights:', availableFlights);
 
     res.status(200).json({ availableFlights });
   } catch (error) {
@@ -1233,8 +1062,10 @@ app.post('/api/check-flights', async (req, res) => {
 // Book flight route
 app.post('/api/book-flight', async (req, res) => {
   try {
+    // Extract booking details from the request body
     const { flight, classSelection, userEmail } = req.body;
 
+    // Create a new booked flight document
     const bookedFlight = new BookedFlight({
       airline: flight.airline,
       departure: flight.departure,
@@ -1243,8 +1074,10 @@ app.post('/api/book-flight', async (req, res) => {
       userEmail,
     });
 
+    // Save the booked flight document to the database
     await bookedFlight.save();
 
+    // Send a response indicating that the booking was successful
     res.status(200).json({ message: 'Booking successful', bookedFlight });
   } catch (error) {
     console.error('Error booking flight:', error);
@@ -1255,7 +1088,10 @@ app.post('/api/book-flight', async (req, res) => {
 // Fetch all flights route
 app.get('/api/get-all-flights', async (req, res) => {
   try {
+    // Query the database to retrieve all flights
     const allFlights = await FlightModel.find();
+
+    // Send the retrieved flights as a response
     res.status(200).json({ availableFlights: allFlights });
   } catch (error) {
     console.error(error);
@@ -1263,19 +1099,183 @@ app.get('/api/get-all-flights', async (req, res) => {
   }
 });
 
+
 // Fetch user orders route
 app.get('/api/get-user-orders', async (req, res) => {
-  const { userEmail } = req.query;
+    const { userEmail } = req.query;
+  
+    try {
+      const userOrders = await BookedFlight.find({ userEmail });
+      res.status(200).json({ orders: userOrders });
+    } catch (error) {
+      console.error('Error fetching user orders:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+  
 
-  try {
-    const userOrders = await BookedFlight.find({ userEmail });
-    res.status(200).json({ orders: userOrders });
-  } catch (error) {
-    console.error('Error fetching user orders:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+
 
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);
 });
+
+
+
+
+
+
+// const express = require('express');
+// const app = express();
+// const bodyParser = require('body-parser');
+// const mongoose = require('mongoose');
+// const cors = require('cors');
+
+// const port = 3000;
+
+// app.use(bodyParser.json());
+// app.use(cors());
+// app.use(express.json());
+
+// // Connect to MongoDB
+// mongoose.connect('mongodb+srv://tharunkumarva:Atlas123123@cluster0.6rwnhir.mongodb.net/successonfly', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+// mongoose.connection.on('connected', () => {
+//   console.log('Connected to MongoDB');
+// });
+// mongoose.connection.on('error', (err) => {
+//   console.error('MongoDB connection error:', err);
+// });
+
+// // Define user schema and model
+// const userSchema = new mongoose.Schema({
+//   username: { type: String, unique: true, required: true },
+//   password: { type: String, required: true },
+// });
+
+// const UserModel = mongoose.model('User', userSchema);
+
+// // Define booked flight schema and model
+// const bookedFlightSchema = new mongoose.Schema({
+//   airline: String,
+//   departure: {
+//     location: String,
+//     date_time: String,
+//   },
+//   arrival: {
+//     location: String,
+//     date_time: String,
+//   },
+//   classSelection: String,
+//   userEmail: String,
+// });
+
+// const BookedFlight = mongoose.model('BookedFlight', bookedFlightSchema);
+
+// // Register user route
+// app.post('/api/users', async (req, res) => {
+//   const { username, password } = req.body;
+
+//   try {
+//     const existingUser = await UserModel.findOne({ username });
+
+//     if (existingUser) {
+//       return res.status(400).json({ error: 'Username already exists' });
+//     }
+
+//     const newUser = new UserModel({ username, password });
+//     await newUser.save();
+
+//     res.status(201).json({ message: 'User registered successfully', user: newUser });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+// // Login route
+// app.post('/api/login', async (req, res) => {
+//   const { username, password } = req.body;
+
+//   try {
+//     const user = await UserModel.findOne({ username, password });
+
+//     if (user) {
+//       res.status(200).json({ message: 'Login successful', user });
+//     } else {
+//       res.status(401).json({ error: 'Invalid credentials' });
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+// // Check flights route
+// app.post('/api/check-flights', async (req, res) => {
+//   const { startLocation, endLocation, startDate, endDate, adults, children, infants, selectedClass } = req.body;
+
+//   try {
+//     const availableFlights = await FlightModel.find({
+//       'departure.location': startLocation,
+//       'arrival.location': endLocation,
+//     });
+
+//     res.status(200).json({ availableFlights });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+// // Book flight route
+// app.post('/api/book-flight', async (req, res) => {
+//   try {
+//     const { flight, classSelection, userEmail } = req.body;
+
+//     const bookedFlight = new BookedFlight({
+//       airline: flight.airline,
+//       departure: flight.departure,
+//       arrival: flight.arrival,
+//       classSelection,
+//       userEmail,
+//     });
+
+//     await bookedFlight.save();
+
+//     res.status(200).json({ message: 'Booking successful', bookedFlight });
+//   } catch (error) {
+//     console.error('Error booking flight:', error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+// // Fetch all flights route
+// app.get('/api/get-all-flights', async (req, res) => {
+//   try {
+//     const allFlights = await FlightModel.find();
+//     res.status(200).json({ availableFlights: allFlights });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+// // Fetch user orders route
+// app.get('/api/get-user-orders', async (req, res) => {
+//   const { userEmail } = req.query;
+
+//   try {
+//     const userOrders = await BookedFlight.find({ userEmail });
+//     res.status(200).json({ orders: userOrders });
+//   } catch (error) {
+//     console.error('Error fetching user orders:', error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+// app.listen(port, () => {
+//   console.log(`Server is listening at http://localhost:${port}`);
+// });
