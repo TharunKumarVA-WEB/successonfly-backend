@@ -1,0 +1,735 @@
+[
+
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495689"
+    },
+    "flight_number": "SG202",
+    "airline": "SpiceJet",
+    "departure": {
+      "location": "Bangalore",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Chennai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 8,
+        "price": 1800
+      },
+      "Economy": {
+        "remaining_seats": 40,
+        "price": 900
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495688"
+    },
+    "flight_number": "IND456",
+    "airline": "IndiGo",
+    "departure": {
+      "location": "Delhi",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Mumbai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 12,
+        "price": 2000
+      },
+      "Economy": {
+        "remaining_seats": 60,
+        "price": 1000
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495687"
+    },
+    "flight_number": "JET789",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Banglore",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Mumbai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495686"
+    },
+    "flight_number": "JET789",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Chennai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Bangalore",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495685"
+    },
+    "flight_number": "JET789",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Chennai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Kerala",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495684"
+    },
+    "flight_number": "JET789",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Delhi",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Bangalore",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495683"
+    },
+    "flight_number": "JET789",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Kerala",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Chennai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495682"
+    },
+    "flight_number": "JET789",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Chennai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Mumbai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495681"
+    },
+    "flight_number": "JET789",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Kerala",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Bangalore",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495680"
+    },
+    "flight_number": "JET789",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Kerala",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Delhi",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495679"
+    },
+    "flight_number": "JET789",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Chennai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Madurai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495678"
+    },
+    "flight_number": "JET789",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Madurai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Chennai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495677"
+    },
+    "flight_number": "AI202",
+    "airline": "Air India",
+    "departure": {
+      "location": "Mumbai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Chennai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2400
+      },
+      "Economy": {
+        "remaining_seats": 50,
+        "price": 1200
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495676"
+    },
+    "flight_number": "AI303",
+    "airline": "Air India",
+    "departure": {
+      "location": "Mumbai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Bangalore",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 15,
+        "price": 2500
+      },
+      "Economy": {
+        "remaining_seats": 60,
+        "price": 1300
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b349563875"
+    },
+    "flight_number": "AI404",
+    "airline": "Air India",
+    "departure": {
+      "location": "Mumbai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Kerala",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 12,
+        "price": 2600
+      },
+      "Economy": {
+        "remaining_seats": 55,
+        "price": 1400
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495674"
+    },
+    "flight_number": "AI505",
+    "airline": "Air India",
+    "departure": {
+      "location": "Mumbai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Madurai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 8,
+        "price": 2300
+      },
+      "Economy": {
+        "remaining_seats": 40,
+        "price": 1200
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495672"
+    },
+    "flight_number": "SG707",
+    "airline": "SpiceJet",
+    "departure": {
+      "location": "Madurai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Mumbai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2000
+      },
+      "Economy": {
+        "remaining_seats": 50,
+        "price": 1000
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495671"
+    },
+    "flight_number": "SG808",
+    "airline": "SpiceJet",
+    "departure": {
+      "location": "Madurai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Delhi",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 12,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 55,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495670"
+    },
+    "flight_number": "SG909",
+    "airline": "SpiceJet",
+    "departure": {
+      "location": "Madurai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Bangalore",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 15,
+        "price": 2100
+      },
+      "Economy": {
+        "remaining_seats": 60,
+        "price": 1000
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495660"
+    },
+    "flight_number": "SG1010",
+    "airline": "SpiceJet",
+    "departure": {
+      "location": "Madurai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Kerala",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 1900
+      },
+      "Economy": {
+        "remaining_seats": 45,
+        "price": 900
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b34959"
+    },
+    "flight_number": "JET606",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Kerala",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Mumbai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 15,
+        "price": 2300
+      },
+      "Economy": {
+        "remaining_seats": 60,
+        "price": 1200
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495658"
+    },
+    "flight_number": "JET707",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Kerala",
+      "date_time": "18:00"
+    },
+    "arrival": {
+      "location": "Madurai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 12,
+        "price": 2100
+      },
+      "Economy": {
+        "remaining_seats": 55,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495657"
+    },
+    "flight_number": "IND505",
+    "airline": "IndiGo",
+    "departure": {
+      "location": "Bangalore",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Delhi",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 50,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495656"
+    },
+    "flight_number": "IND606",
+    "airline": "IndiGo",
+    "departure": {
+      "location": "Bangalore",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Kerala",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 15,
+        "price": 2300
+      },
+      "Economy": {
+        "remaining_seats": 60,
+        "price": 1200
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495655"
+    },
+    "flight_number": "IND707",
+    "airline": "IndiGo",
+    "departure": {
+      "location": "Bangalore",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Madurai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 12,
+        "price": 2100
+      },
+      "Economy": {
+        "remaining_seats": 55,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495654"
+    },
+    "flight_number": "SG505",
+    "airline": "SpiceJet",
+    "departure": {
+      "location": "Chennai",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Delhi",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 10,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 50,
+        "price": 1100
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495653"
+    },
+    "flight_number": "JET404",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Delhi",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Chennai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 12,
+        "price": 2300
+      },
+      "Economy": {
+        "remaining_seats": 55,
+        "price": 1200
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495652"
+    },
+    "flight_number": "JET505",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Delhi",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Kerala",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 15,
+        "price": 2400
+      },
+      "Economy": {
+        "remaining_seats": 60,
+        "price": 1300
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65be0c0f4a793e04b3495651"
+    },
+    "flight_number": "JET606",
+    "airline": "Jet Airways",
+    "departure": {
+      "location": "Delhi",
+      "time": "18:00"
+    },
+    "arrival": {
+      "location": "Madurai",
+      "time": "18:00"
+    },
+    "class_availability": {
+      "Business": {
+        "remaining_seats": 12,
+        "price": 2200
+      },
+      "Economy": {
+        "remaining_seats": 55,
+        "price": 1100
+      }
+    }
+  }
+
+
+
+
+
+  
+
+]
