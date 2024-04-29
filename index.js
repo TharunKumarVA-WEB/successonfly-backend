@@ -140,9 +140,40 @@ app.post('/api/check-flights', async (req, res) => {
 });
 
 
+// app.post('/api/book-flight', async (req, res) => {
+//   try {
+//     const { flight, classSelection, numAdults, numChildren, departureDate } = req.body;
+
+//     // Assuming you have a BookedFlight model
+//     const bookedFlight = new BookedFlight({
+//       airline: flight.airline,
+//       flight_number: flight.flight_number,
+//       departure: flight.departure,
+//       arrival: flight.arrival,
+//       classSelection,
+//       numAdults,
+//       numChildren,
+//       departureDate,
+//     });
+
+//     await bookedFlight.save();
+
+//     res.status(200).json({ message: 'Booking successful', bookedFlight });
+//   } catch (error) {
+//     console.error('Error booking flight:', error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+
 app.post('/api/book-flight', async (req, res) => {
   try {
-    const { flight, classSelection, numAdults, numChildren, departureDate } = req.body;
+    const { flight, classSelection, numAdults, numChildren, departureDate, userEmail } = req.body;
+
+    // Check if the user is logged in
+    if (!userEmail) {
+      return res.status(401).json({ error: 'User not logged in' });
+    }
 
     // Assuming you have a BookedFlight model
     const bookedFlight = new BookedFlight({
@@ -154,6 +185,7 @@ app.post('/api/book-flight', async (req, res) => {
       numAdults,
       numChildren,
       departureDate,
+      userEmail, // Include the user's email in the booking
     });
 
     await bookedFlight.save();
@@ -164,6 +196,9 @@ app.post('/api/book-flight', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+
+
 
 // Existing routes and server setup
 
