@@ -238,7 +238,7 @@ const bookedFlightSchema = new mongoose.Schema({
     date_time: String,
   },
   classSelection: String,
-  userEmail: String, // Field to store the user's email
+  userEmail: String, // Ensure this field is included
   bookingDate: { type: Date, default: Date.now },
   price: Number,
 });
@@ -329,7 +329,11 @@ app.post('/api/check-flights', async (req, res) => {
 
 app.post('/api/book-flight', async (req, res) => {
   try {
+    console.log('Received booking request:', req.body); // Log the incoming request body
+
     const { flight, classSelection, numAdults, numChildren, departureDate, userEmail } = req.body;
+
+    console.log('Booking flight for user:', userEmail); // Log the user email
 
     const bookedFlight = new BookedFlight({
       airline: flight.airline,
@@ -337,13 +341,12 @@ app.post('/api/book-flight', async (req, res) => {
       departure: flight.departure,
       arrival: flight.arrival,
       classSelection,
-      numAdults,
-      numChildren,
-      departureDate,
-      userEmail, // Store the user's email in the booking
+      userEmail, // Ensure this field is set correctly
     });
 
     await bookedFlight.save();
+
+    console.log('Flight booked successfully:', bookedFlight); // Log the booked flight details
 
     res.status(200).json({ message: 'Booking successful', bookedFlight });
   } catch (error) {
@@ -377,5 +380,3 @@ app.get('/api/get-user-orders', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);
 });
-
-
